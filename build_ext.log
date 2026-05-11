@@ -1,0 +1,289 @@
+running build_ext
+building 'model.utils.cython_bbox' extension
+creating build
+creating build/temp.linux-x86_64-3.6
+creating build/temp.linux-x86_64-3.6/model
+creating build/temp.linux-x86_64-3.6/model/utils
+{'gcc': ['-Wno-cpp', '-Wno-unused-function']}
+/usr/bin/gcc-7 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -std=c99 -fPIC -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/numpy/core/include -I/root/miniconda3/envs/odmad/include/python3.6m -c model/utils/bbox.c -o build/temp.linux-x86_64-3.6/model/utils/bbox.o -Wno-cpp -Wno-unused-function
+gcc -pthread -shared -L/root/miniconda3/envs/odmad/lib -Wl,-rpath=/root/miniconda3/envs/odmad/lib,--no-as-needed -std=c99 build/temp.linux-x86_64-3.6/model/utils/bbox.o -L/root/miniconda3/envs/odmad/lib -lpython3.6m -o /root/MAD-main/Pytorch/lib/model/utils/cython_bbox.cpython-36m-x86_64-linux-gnu.so
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010001
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010002
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010001
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010002
+Compiling pycocotools/_mask.pyx because it changed.
+[1/1] Cythonizing pycocotools/_mask.pyx
+building 'pycocotools._mask' extension
+creating build/temp.linux-x86_64-3.6/pycocotools
+{'gcc': ['-Wno-cpp', '-Wno-unused-function', '-std=c99']}
+/usr/bin/gcc-7 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -std=c99 -fPIC -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/numpy/core/include -Ipycocotools -I/root/miniconda3/envs/odmad/include/python3.6m -c pycocotools/_mask.c -o build/temp.linux-x86_64-3.6/pycocotools/_mask.o -Wno-cpp -Wno-unused-function -std=c99
+{'gcc': ['-Wno-cpp', '-Wno-unused-function', '-std=c99']}
+/usr/bin/gcc-7 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -std=c99 -fPIC -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/numpy/core/include -Ipycocotools -I/root/miniconda3/envs/odmad/include/python3.6m -c pycocotools/maskApi.c -o build/temp.linux-x86_64-3.6/pycocotools/maskApi.o -Wno-cpp -Wno-unused-function -std=c99
+pycocotools/maskApi.c: In function ‘rlesFree’:
+pycocotools/maskApi.c:29:3: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+   for(siz i=0; i<n; i++) rleFree((*R)+i); free(*R); *R=0;
+   ^~~
+pycocotools/maskApi.c:29:43: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+   for(siz i=0; i<n; i++) rleFree((*R)+i); free(*R); *R=0;
+                                           ^~~~
+pycocotools/maskApi.c: In function ‘rleDecode’:
+pycocotools/maskApi.c:46:7: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+       for( siz k=0; k<R[i].cnts[j]; k++ ) *(M++)=v; v=!v; }}
+       ^~~
+pycocotools/maskApi.c:46:53: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+       for( siz k=0; k<R[i].cnts[j]; k++ ) *(M++)=v; v=!v; }}
+                                                     ^
+pycocotools/maskApi.c: In function ‘rleFrPoly’:
+pycocotools/maskApi.c:143:3: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+   for(j=0; j<k; j++) x[j]=(int)(scale*xy[j*2+0]+.5); x[k]=x[0];
+   ^~~
+pycocotools/maskApi.c:143:54: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+   for(j=0; j<k; j++) x[j]=(int)(scale*xy[j*2+0]+.5); x[k]=x[0];
+                                                      ^
+pycocotools/maskApi.c:144:3: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+   for(j=0; j<k; j++) y[j]=(int)(scale*xy[j*2+1]+.5); y[k]=y[0];
+   ^~~
+pycocotools/maskApi.c:144:54: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+   for(j=0; j<k; j++) y[j]=(int)(scale*xy[j*2+1]+.5); y[k]=y[0];
+                                                      ^
+pycocotools/maskApi.c: In function ‘rleToString’:
+pycocotools/maskApi.c:189:7: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+       if(more) c |= 0x20; c+=48; s[p++]=c;
+       ^~
+pycocotools/maskApi.c:189:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+       if(more) c |= 0x20; c+=48; s[p++]=c;
+                           ^
+pycocotools/maskApi.c: In function ‘rleFrString’:
+pycocotools/maskApi.c:197:3: warning: this ‘while’ clause does not guard... [-Wmisleading-indentation]
+   while( s[m] ) m++; cnts=malloc(sizeof(uint)*m); m=0;
+   ^~~~~
+pycocotools/maskApi.c:197:22: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘while’
+   while( s[m] ) m++; cnts=malloc(sizeof(uint)*m); m=0;
+                      ^~~~
+pycocotools/maskApi.c:205:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+     if(m>2) x+=(long) cnts[m-2]; cnts[m++]=(uint) x;
+     ^~
+pycocotools/maskApi.c:205:34: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+     if(m>2) x+=(long) cnts[m-2]; cnts[m++]=(uint) x;
+                                  ^~~~
+gcc -pthread -shared -L/root/miniconda3/envs/odmad/lib -Wl,-rpath=/root/miniconda3/envs/odmad/lib,--no-as-needed -std=c99 build/temp.linux-x86_64-3.6/pycocotools/_mask.o build/temp.linux-x86_64-3.6/pycocotools/maskApi.o -L/root/miniconda3/envs/odmad/lib -lpython3.6m -o /root/MAD-main/Pytorch/lib/pycocotools/_mask.cpython-36m-x86_64-linux-gnu.so
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010001
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010002
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010001
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010002
+/root/miniconda3/envs/odmad/lib/python3.6/site-packages/Cython/Compiler/Main.py:381: FutureWarning: Cython directive 'language_level' not set, using '3str' for now (Py3). This has changed from earlier releases! File: /root/MAD-main/Pytorch/lib/pycocotools/_mask.pyx
+  tree = Parsing.p_module(s, pxd, full_module_name)
+Compiling nms kernels by nvcc...
+Including CUDA code.
+/root/MAD-main/Pytorch/lib/model/nms
+['/root/MAD-main/Pytorch/lib/model/nms/src/nms_cuda_kernel.cu.o']
+generating /tmp/tmpr1f8iptd/_nms.c
+setting the current directory to '/tmp/tmpr1f8iptd'
+running build_ext
+building '_nms' extension
+creating root
+creating root/MAD-main
+creating root/MAD-main/Pytorch
+creating root/MAD-main/Pytorch/lib
+creating root/MAD-main/Pytorch/lib/model
+creating root/MAD-main/Pytorch/lib/model/nms
+creating root/MAD-main/Pytorch/lib/model/nms/src
+/usr/bin/gcc-7 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -std=c99 -fPIC -DWITH_CUDA -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/TH -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/THC -I/usr/local/cuda/include -I/root/miniconda3/envs/odmad/include/python3.6m -c _nms.c -o ./_nms.o -std=c99
+/usr/bin/gcc-7 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -std=c99 -fPIC -DWITH_CUDA -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/TH -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/THC -I/usr/local/cuda/include -I/root/miniconda3/envs/odmad/include/python3.6m -c /root/MAD-main/Pytorch/lib/model/nms/src/nms_cuda.c -o ./root/MAD-main/Pytorch/lib/model/nms/src/nms_cuda.o -std=c99
+gcc -pthread -shared -L/root/miniconda3/envs/odmad/lib -Wl,-rpath=/root/miniconda3/envs/odmad/lib,--no-as-needed -std=c99 ./_nms.o ./root/MAD-main/Pytorch/lib/model/nms/src/nms_cuda.o /root/MAD-main/Pytorch/lib/model/nms/src/nms_cuda_kernel.cu.o -L/root/miniconda3/envs/odmad/lib -lpython3.6m -o ./_nms.so
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010001
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010002
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010001
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010002
+Compiling roi pooling kernels by nvcc...
+/root/MAD-main/Pytorch/lib/model/roi_pooling
+Including CUDA code.
+generating /tmp/tmpd5iqvqkf/_roi_pooling.c
+setting the current directory to '/tmp/tmpd5iqvqkf'
+running build_ext
+building '_roi_pooling' extension
+creating root
+creating root/MAD-main
+creating root/MAD-main/Pytorch
+creating root/MAD-main/Pytorch/lib
+creating root/MAD-main/Pytorch/lib/model
+creating root/MAD-main/Pytorch/lib/model/roi_pooling
+creating root/MAD-main/Pytorch/lib/model/roi_pooling/src
+/usr/bin/gcc-7 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -std=c99 -fPIC -DWITH_CUDA -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/TH -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/THC -I/usr/local/cuda/include -I/root/miniconda3/envs/odmad/include/python3.6m -c _roi_pooling.c -o ./_roi_pooling.o -std=c99
+/usr/bin/gcc-7 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -std=c99 -fPIC -DWITH_CUDA -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/TH -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/THC -I/usr/local/cuda/include -I/root/miniconda3/envs/odmad/include/python3.6m -c /root/MAD-main/Pytorch/lib/model/roi_pooling/src/roi_pooling.c -o ./root/MAD-main/Pytorch/lib/model/roi_pooling/src/roi_pooling.o -std=c99
+/usr/bin/gcc-7 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -std=c99 -fPIC -DWITH_CUDA -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/TH -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/THC -I/usr/local/cuda/include -I/root/miniconda3/envs/odmad/include/python3.6m -c /root/MAD-main/Pytorch/lib/model/roi_pooling/src/roi_pooling_cuda.c -o ./root/MAD-main/Pytorch/lib/model/roi_pooling/src/roi_pooling_cuda.o -std=c99
+gcc -pthread -shared -L/root/miniconda3/envs/odmad/lib -Wl,-rpath=/root/miniconda3/envs/odmad/lib,--no-as-needed -std=c99 ./_roi_pooling.o ./root/MAD-main/Pytorch/lib/model/roi_pooling/src/roi_pooling.o ./root/MAD-main/Pytorch/lib/model/roi_pooling/src/roi_pooling_cuda.o /root/MAD-main/Pytorch/lib/model/roi_pooling/src/roi_pooling.cu.o -L/root/miniconda3/envs/odmad/lib -lpython3.6m -o ./_roi_pooling.so
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010001
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010002
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010001
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010002
+Compiling roi align kernels by nvcc...
+/root/MAD-main/Pytorch/lib/model/roi_align
+Including CUDA code.
+generating /tmp/tmpmyf4ubxl/_roi_align.c
+setting the current directory to '/tmp/tmpmyf4ubxl'
+running build_ext
+building '_roi_align' extension
+creating root
+creating root/MAD-main
+creating root/MAD-main/Pytorch
+creating root/MAD-main/Pytorch/lib
+creating root/MAD-main/Pytorch/lib/model
+creating root/MAD-main/Pytorch/lib/model/roi_align
+creating root/MAD-main/Pytorch/lib/model/roi_align/src
+/usr/bin/gcc-7 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -std=c99 -fPIC -DWITH_CUDA -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/TH -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/THC -I/usr/local/cuda/include -I/root/miniconda3/envs/odmad/include/python3.6m -c _roi_align.c -o ./_roi_align.o -std=c99
+/usr/bin/gcc-7 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -std=c99 -fPIC -DWITH_CUDA -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/TH -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/THC -I/usr/local/cuda/include -I/root/miniconda3/envs/odmad/include/python3.6m -c /root/MAD-main/Pytorch/lib/model/roi_align/src/roi_align.c -o ./root/MAD-main/Pytorch/lib/model/roi_align/src/roi_align.o -std=c99
+/usr/bin/gcc-7 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -std=c99 -fPIC -DWITH_CUDA -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/TH -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/THC -I/usr/local/cuda/include -I/root/miniconda3/envs/odmad/include/python3.6m -c /root/MAD-main/Pytorch/lib/model/roi_align/src/roi_align_cuda.c -o ./root/MAD-main/Pytorch/lib/model/roi_align/src/roi_align_cuda.o -std=c99
+gcc -pthread -shared -L/root/miniconda3/envs/odmad/lib -Wl,-rpath=/root/miniconda3/envs/odmad/lib,--no-as-needed -std=c99 ./_roi_align.o ./root/MAD-main/Pytorch/lib/model/roi_align/src/roi_align.o ./root/MAD-main/Pytorch/lib/model/roi_align/src/roi_align_cuda.o /root/MAD-main/Pytorch/lib/model/roi_align/src/roi_align_kernel.cu.o -L/root/miniconda3/envs/odmad/lib -lpython3.6m -o ./_roi_align.so
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010001
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010002
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010001
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010002
+Compiling roi crop kernels by nvcc...
+Including CUDA code.
+/root/MAD-main/Pytorch/lib/model/roi_crop
+generating /tmp/tmp0t5k4t__/_roi_crop.c
+setting the current directory to '/tmp/tmp0t5k4t__'
+running build_ext
+building '_roi_crop' extension
+creating root
+creating root/MAD-main
+creating root/MAD-main/Pytorch
+creating root/MAD-main/Pytorch/lib
+creating root/MAD-main/Pytorch/lib/model
+creating root/MAD-main/Pytorch/lib/model/roi_crop
+creating root/MAD-main/Pytorch/lib/model/roi_crop/src
+/usr/bin/gcc-7 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -std=c99 -fPIC -DWITH_CUDA -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/TH -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/THC -I/usr/local/cuda/include -I/root/miniconda3/envs/odmad/include/python3.6m -c _roi_crop.c -o ./_roi_crop.o -std=c99
+/usr/bin/gcc-7 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -std=c99 -fPIC -DWITH_CUDA -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/TH -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/../../lib/include/THC -I/usr/local/cuda/include -I/root/miniconda3/envs/odmad/include/python3.6m -c /root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c -o ./root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.o -std=c99
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c: In function ‘BilinearSamplerBCHW_updateGradInput’:
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:367:16: error: ‘batchsize’ undeclared (first use in this function)
+   for(b=0; b < batchsize; b++)
+                ^~~~~~~~~
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:367:16: note: each undeclared identifier is reported only once for each function it appears in
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:369:24: error: ‘gradOutput_height’ undeclared (first use in this function); did you mean ‘gradOutput_data’?
+     for(yOut=0; yOut < gradOutput_height; yOut++)
+                        ^~~~~~~~~~~~~~~~~
+                        gradOutput_data
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:371:26: error: ‘gradOutput_width’ undeclared (first use in this function); did you mean ‘gradOutput_data’?
+       for(xOut=0; xOut < gradOutput_width; xOut++)
+                          ^~~~~~~~~~~~~~~~
+                          gradOutput_data
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:381:35: error: ‘inputImages_width’ undeclared (first use in this function); did you mean ‘inputImages_data’?
+         real xcoord = (xf + 1) * (inputImages_width - 1) / 2;
+                                   ^~~~~~~~~~~~~~~~~
+                                   inputImages_data
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:385:35: error: ‘inputImages_height’ undeclared (first use in this function); did you mean ‘inputImages_width’?
+         real ycoord = (yf + 1) * (inputImages_height - 1) / 2;
+                                   ^~~~~~~~~~~~~~~~~~
+                                   inputImages_width
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:395:51: error: ‘gradInputImages_strideBatch’ undeclared (first use in this function); did you mean ‘inputImages_strideBatch’?
+         const int gradInputImagesTopLeftAddress = gradInputImages_strideBatch * b + gradInputImages_strideHeight * yInTopLeft + gradInputImages_strideWidth * xInTopLeft;
+                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                   inputImages_strideBatch
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:395:85: error: ‘gradInputImages_strideHeight’ undeclared (first use in this function); did you mean ‘gradInputImages_strideBatch’?
+         const int gradInputImagesTopLeftAddress = gradInputImages_strideBatch * b + gradInputImages_strideHeight * yInTopLeft + gradInputImages_strideWidth * xInTopLeft;
+                                                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                     gradInputImages_strideBatch
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:395:129: error: ‘gradInputImages_strideWidth’ undeclared (first use in this function); did you mean ‘gradInputImages_strideBatch’?
+         const int gradInputImagesTopLeftAddress = gradInputImages_strideBatch * b + gradInputImages_strideHeight * yInTopLeft + gradInputImages_strideWidth * xInTopLeft;
+                                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                                                                 gradInputImages_strideBatch
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:400:39: error: ‘gradOutput_strideBatch’ undeclared (first use in this function); did you mean ‘gradOutput_width’?
+         const int gradOutputAddress = gradOutput_strideBatch * b + gradOutput_strideHeight * yOut + gradOutput_strideWidth * xOut;
+                                       ^~~~~~~~~~~~~~~~~~~~~~
+                                       gradOutput_width
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:400:68: error: ‘gradOutput_strideHeight’ undeclared (first use in this function); did you mean ‘gradOutput_strideBatch’?
+         const int gradOutputAddress = gradOutput_strideBatch * b + gradOutput_strideHeight * yOut + gradOutput_strideWidth * xOut;
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~
+                                                                    gradOutput_strideBatch
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:400:101: error: ‘gradOutput_strideWidth’ undeclared (first use in this function); did you mean ‘gradOutput_strideBatch’?
+         const int gradOutputAddress = gradOutput_strideBatch * b + gradOutput_strideHeight * yOut + gradOutput_strideWidth * xOut;
+                                                                                                     ^~~~~~~~~~~~~~~~~~~~~~
+                                                                                                     gradOutput_strideBatch
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:415:20: error: ‘inputImages_channels’ undeclared (first use in this function); did you mean ‘inputImages_height’?
+         for(t=0; t<inputImages_channels; t++)
+                    ^~~~~~~~~~~~~~~~~~~~
+                    inputImages_height
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:417:72: error: ‘gradOutput_strideChannel’ undeclared (first use in this function); did you mean ‘gradOutput_strideBatch’?
+            real gradOutValue = gradOutput_data[gradOutputAddress + t * gradOutput_strideChannel];
+                                                                        ^~~~~~~~~~~~~~~~~~~~~~~~
+                                                                        gradOutput_strideBatch
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:422:86: error: ‘gradInputImages_strideChannel’ undeclared (first use in this function); did you mean ‘inputImages_strideChannel’?
+               if(!onlyGrid) gradInputImages_data[gradInputImagesTopLeftAddress + t * gradInputImages_strideChannel] += xWeightTopLeft * yWeightTopLeft * gradOutValue;
+                                                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                      inputImages_strideChannel
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:452:26: error: ‘gradGrids_strideBatch’ undeclared (first use in this function); did you mean ‘grids_strideBatch’?
+         gradGrids_data[b*gradGrids_strideBatch + yOut*gradGrids_strideHeight + xOut*gradGrids_strideWidth + gradGrids_strideChannel] = xf * (inputImages_width-1) / 2;
+                          ^~~~~~~~~~~~~~~~~~~~~
+                          grids_strideBatch
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:452:55: error: ‘gradGrids_strideHeight’ undeclared (first use in this function); did you mean ‘grids_strideHeight’?
+         gradGrids_data[b*gradGrids_strideBatch + yOut*gradGrids_strideHeight + xOut*gradGrids_strideWidth + gradGrids_strideChannel] = xf * (inputImages_width-1) / 2;
+                                                       ^~~~~~~~~~~~~~~~~~~~~~
+                                                       grids_strideHeight
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:452:85: error: ‘gradGrids_strideWidth’ undeclared (first use in this function); did you mean ‘gradGrids_strideBatch’?
+         gradGrids_data[b*gradGrids_strideBatch + yOut*gradGrids_strideHeight + xOut*gradGrids_strideWidth + gradGrids_strideChannel] = xf * (inputImages_width-1) / 2;
+                                                                                     ^~~~~~~~~~~~~~~~~~~~~
+                                                                                     gradGrids_strideBatch
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:452:109: error: ‘gradGrids_strideChannel’ undeclared (first use in this function); did you mean ‘grids_strideChannel’?
+         gradGrids_data[b*gradGrids_strideBatch + yOut*gradGrids_strideHeight + xOut*gradGrids_strideWidth + gradGrids_strideChannel] = xf * (inputImages_width-1) / 2;
+                                                                                                             ^~~~~~~~~~~~~~~~~~~~~~~
+                                                                                                             grids_strideChannel
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:358:76: warning: variable ‘gradInputImages_data’ set but not used [-Wunused-but-set-variable]
+   real *inputImages_data, *gradOutput_data, *grids_data, *gradGrids_data, *gradInputImages_data;
+                                                                            ^~~~~~~~~~~~~~~~~~~~
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:358:59: warning: variable ‘gradGrids_data’ set but not used [-Wunused-but-set-variable]
+   real *inputImages_data, *gradOutput_data, *grids_data, *gradGrids_data, *gradInputImages_data;
+                                                           ^~~~~~~~~~~~~~
+/root/MAD-main/Pytorch/lib/model/roi_crop/src/roi_crop.c:358:28: warning: variable ‘gradOutput_data’ set but not used [-Wunused-but-set-variable]
+   real *inputImages_data, *gradOutput_data, *grids_data, *gradGrids_data, *gradInputImages_data;
+                            ^~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/odmad/lib/python3.6/distutils/unixccompiler.py", line 118, in _compile
+    extra_postargs)
+  File "/root/miniconda3/envs/odmad/lib/python3.6/distutils/ccompiler.py", line 909, in spawn
+    spawn(cmd, dry_run=self.dry_run)
+  File "/root/miniconda3/envs/odmad/lib/python3.6/distutils/spawn.py", line 36, in spawn
+    _spawn_posix(cmd, search_path, dry_run=dry_run)
+  File "/root/miniconda3/envs/odmad/lib/python3.6/distutils/spawn.py", line 159, in _spawn_posix
+    % (cmd, exit_status))
+distutils.errors.DistutilsExecError: command '/usr/bin/gcc-7' failed with exit status 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/odmad/lib/python3.6/site-packages/cffi/ffiplatform.py", line 51, in _build
+    dist.run_command('build_ext')
+  File "/root/miniconda3/envs/odmad/lib/python3.6/distutils/dist.py", line 974, in run_command
+    cmd_obj.run()
+  File "/root/miniconda3/envs/odmad/lib/python3.6/distutils/command/build_ext.py", line 339, in run
+    self.build_extensions()
+  File "/root/miniconda3/envs/odmad/lib/python3.6/distutils/command/build_ext.py", line 448, in build_extensions
+    self._build_extensions_serial()
+  File "/root/miniconda3/envs/odmad/lib/python3.6/distutils/command/build_ext.py", line 473, in _build_extensions_serial
+    self.build_extension(ext)
+  File "/root/miniconda3/envs/odmad/lib/python3.6/distutils/command/build_ext.py", line 533, in build_extension
+    depends=ext.depends)
+  File "/root/miniconda3/envs/odmad/lib/python3.6/distutils/ccompiler.py", line 574, in compile
+    self._compile(obj, src, ext, cc_args, extra_postargs, pp_opts)
+  File "/root/miniconda3/envs/odmad/lib/python3.6/distutils/unixccompiler.py", line 120, in _compile
+    raise CompileError(msg)
+distutils.errors.CompileError: command '/usr/bin/gcc-7' failed with exit status 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "build.py", line 36, in <module>
+    ffi.build()
+  File "/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/__init__.py", line 189, in build
+    _build_extension(ffi, cffi_wrapper_name, target_dir, verbose)
+  File "/root/miniconda3/envs/odmad/lib/python3.6/site-packages/torch/utils/ffi/__init__.py", line 111, in _build_extension
+    outfile = ffi.compile(tmpdir=tmpdir, verbose=verbose, target=libname)
+  File "/root/miniconda3/envs/odmad/lib/python3.6/site-packages/cffi/api.py", line 727, in compile
+    compiler_verbose=verbose, debug=debug, **kwds)
+  File "/root/miniconda3/envs/odmad/lib/python3.6/site-packages/cffi/recompiler.py", line 1565, in recompile
+    compiler_verbose, debug)
+  File "/root/miniconda3/envs/odmad/lib/python3.6/site-packages/cffi/ffiplatform.py", line 22, in compile
+    outputfilename = _build(tmpdir, ext, compiler_verbose, debug)
+  File "/root/miniconda3/envs/odmad/lib/python3.6/site-packages/cffi/ffiplatform.py", line 58, in _build
+    raise VerificationError('%s: %s' % (e.__class__.__name__, e))
+cffi.VerificationError: CompileError: command '/usr/bin/gcc-7' failed with exit status 1

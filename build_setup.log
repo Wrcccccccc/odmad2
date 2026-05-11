@@ -1,0 +1,75 @@
+running build_ext
+building 'model.utils.cython_bbox' extension
+creating build
+creating build/temp.linux-x86_64-3.6
+creating build/temp.linux-x86_64-3.6/model
+creating build/temp.linux-x86_64-3.6/model/utils
+{'gcc': ['-Wno-cpp', '-Wno-unused-function']}
+/usr/bin/gcc-7 -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/numpy/core/include -I/root/miniconda3/envs/odmad/include/python3.6m -c model/utils/bbox.c -o build/temp.linux-x86_64-3.6/model/utils/bbox.o -Wno-cpp -Wno-unused-function
+gcc -pthread -shared -L/root/miniconda3/envs/odmad/lib -Wl,-rpath=/root/miniconda3/envs/odmad/lib,--no-as-needed build/temp.linux-x86_64-3.6/model/utils/bbox.o -L/root/miniconda3/envs/odmad/lib -lpython3.6m -o /root/MAD-main/Pytorch/lib/model/utils/cython_bbox.cpython-36m-x86_64-linux-gnu.so
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010001
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010002
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010001
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010002
+Compiling pycocotools/_mask.pyx because it changed.
+[1/1] Cythonizing pycocotools/_mask.pyx
+building 'pycocotools._mask' extension
+creating build/temp.linux-x86_64-3.6/pycocotools
+{'gcc': ['-Wno-cpp', '-Wno-unused-function', '-std=c99']}
+/usr/bin/gcc-7 -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/numpy/core/include -Ipycocotools -I/root/miniconda3/envs/odmad/include/python3.6m -c pycocotools/_mask.c -o build/temp.linux-x86_64-3.6/pycocotools/_mask.o -Wno-cpp -Wno-unused-function -std=c99
+{'gcc': ['-Wno-cpp', '-Wno-unused-function', '-std=c99']}
+/usr/bin/gcc-7 -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/root/miniconda3/envs/odmad/lib/python3.6/site-packages/numpy/core/include -Ipycocotools -I/root/miniconda3/envs/odmad/include/python3.6m -c pycocotools/maskApi.c -o build/temp.linux-x86_64-3.6/pycocotools/maskApi.o -Wno-cpp -Wno-unused-function -std=c99
+pycocotools/maskApi.c: In function ‘rlesFree’:
+pycocotools/maskApi.c:29:3: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+   for(siz i=0; i<n; i++) rleFree((*R)+i); free(*R); *R=0;
+   ^~~
+pycocotools/maskApi.c:29:43: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+   for(siz i=0; i<n; i++) rleFree((*R)+i); free(*R); *R=0;
+                                           ^~~~
+pycocotools/maskApi.c: In function ‘rleDecode’:
+pycocotools/maskApi.c:46:7: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+       for( siz k=0; k<R[i].cnts[j]; k++ ) *(M++)=v; v=!v; }}
+       ^~~
+pycocotools/maskApi.c:46:53: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+       for( siz k=0; k<R[i].cnts[j]; k++ ) *(M++)=v; v=!v; }}
+                                                     ^
+pycocotools/maskApi.c: In function ‘rleFrPoly’:
+pycocotools/maskApi.c:143:3: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+   for(j=0; j<k; j++) x[j]=(int)(scale*xy[j*2+0]+.5); x[k]=x[0];
+   ^~~
+pycocotools/maskApi.c:143:54: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+   for(j=0; j<k; j++) x[j]=(int)(scale*xy[j*2+0]+.5); x[k]=x[0];
+                                                      ^
+pycocotools/maskApi.c:144:3: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+   for(j=0; j<k; j++) y[j]=(int)(scale*xy[j*2+1]+.5); y[k]=y[0];
+   ^~~
+pycocotools/maskApi.c:144:54: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+   for(j=0; j<k; j++) y[j]=(int)(scale*xy[j*2+1]+.5); y[k]=y[0];
+                                                      ^
+pycocotools/maskApi.c: In function ‘rleToString’:
+pycocotools/maskApi.c:189:7: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+       if(more) c |= 0x20; c+=48; s[p++]=c;
+       ^~
+pycocotools/maskApi.c:189:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+       if(more) c |= 0x20; c+=48; s[p++]=c;
+                           ^
+pycocotools/maskApi.c: In function ‘rleFrString’:
+pycocotools/maskApi.c:197:3: warning: this ‘while’ clause does not guard... [-Wmisleading-indentation]
+   while( s[m] ) m++; cnts=malloc(sizeof(uint)*m); m=0;
+   ^~~~~
+pycocotools/maskApi.c:197:22: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘while’
+   while( s[m] ) m++; cnts=malloc(sizeof(uint)*m); m=0;
+                      ^~~~
+pycocotools/maskApi.c:205:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+     if(m>2) x+=(long) cnts[m-2]; cnts[m++]=(uint) x;
+     ^~
+pycocotools/maskApi.c:205:34: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+     if(m>2) x+=(long) cnts[m-2]; cnts[m++]=(uint) x;
+                                  ^~~~
+gcc -pthread -shared -L/root/miniconda3/envs/odmad/lib -Wl,-rpath=/root/miniconda3/envs/odmad/lib,--no-as-needed build/temp.linux-x86_64-3.6/pycocotools/_mask.o build/temp.linux-x86_64-3.6/pycocotools/maskApi.o -L/root/miniconda3/envs/odmad/lib -lpython3.6m -o /root/MAD-main/Pytorch/lib/pycocotools/_mask.cpython-36m-x86_64-linux-gnu.so
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010001
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010002
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010001
+/usr/bin/ld: warning: /root/miniconda3/envs/odmad/lib/libgcc_s.so.1: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010002
+/root/miniconda3/envs/odmad/lib/python3.6/site-packages/Cython/Compiler/Main.py:381: FutureWarning: Cython directive 'language_level' not set, using '3str' for now (Py3). This has changed from earlier releases! File: /root/MAD-main/Pytorch/lib/pycocotools/_mask.pyx
+  tree = Parsing.p_module(s, pxd, full_module_name)
